@@ -1,0 +1,4 @@
+<mat-chip-list aria-label="sales departments">
+  <mat-chip *ngFor="let salesDepartment of salesDepartments$ | async">{{salesDepartment.name}}</mat-chip>
+</mat-chip-list>
+

@@ -1,0 +1,14 @@
+<ng-container>
+  <form class="form" [formGroup]="form" (ngSubmit)="register()">
+    <mat-form-field>
+      <mat-label>Nombre</mat-label>
+      <input matInput formControlName="name" />
+
+      <mat-error *ngIf="form.get('name')?.hasError('required')">
+        El nombre es requerido
+      </mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">Registrar</button>
+  </form>
+</ng-container>

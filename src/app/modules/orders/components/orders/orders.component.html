@@ -1,0 +1,40 @@
+<table mat-table [dataSource]="orders" class="mat-elevation-z8" [style]="{width: '100%'}">
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef>ID</th>
+    <td mat-cell *matCellDef="let order">{{order.id}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="customerId">
+    <th mat-header-cell *matHeaderCellDef>Identificación del cliente</th>
+    <td mat-cell *matCellDef="let order"> {{order.customerId}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="customerAddress">
+    <th mat-header-cell *matHeaderCellDef>Dirección del cliente</th>
+    <td mat-cell *matCellDef="let order"> {{order.customerAddress}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="createdAt">
+    <th mat-header-cell *matHeaderCellDef>Fecha de creación</th>
+    <td mat-cell *matCellDef="let order"> {{order.createdAt | date}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="subtotal">
+    <th mat-header-cell *matHeaderCellDef>Sub total</th>
+    <td mat-cell *matCellDef="let order"> {{order.subTotal | currency}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="total">
+    <th mat-header-cell *matHeaderCellDef>Total</th>
+    <td mat-cell *matCellDef="let order"> {{order.total | currency}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="discount">
+    <th mat-header-cell *matHeaderCellDef>Descuento</th>
+    <td mat-cell *matCellDef="let order"> {{order.discount | currency}} </td>
+  </ng-container>
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

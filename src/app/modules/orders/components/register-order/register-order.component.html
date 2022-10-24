@@ -18,6 +18,8 @@
       </mat-error>
     </mat-form-field>
 
+    <button mat-raised-button type="button" color="primary" (click)="openAddOrderItemModal()">Añadir producto</button>
+
     <h2 class="mat-h2">Productos</h2>
     <mat-list>
       <mat-list-item *ngFor="let item of form.get('items')?.value">

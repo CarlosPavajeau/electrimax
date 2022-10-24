@@ -8,12 +8,16 @@ import { ReactiveFormsModule } from '@angular/forms'
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatInputModule } from '@angular/material/input'
 import { MatButtonModule } from '@angular/material/button'
-import { MatListModule } from '@angular/material/list'
+import { MatListModule } from '@angular/material/list';
+import { AddOrderItemModalComponent } from './components/add-order-item-modal/add-order-item-modal.component'
+import { MatDialogModule } from '@angular/material/dialog'
+import { MatSelectModule } from '@angular/material/select'
 
 
 @NgModule({
   declarations: [
-    RegisterOrderComponent
+    RegisterOrderComponent,
+    AddOrderItemModalComponent
   ],
   imports: [
     CommonModule,
@@ -23,7 +27,9 @@ import { MatListModule } from '@angular/material/list'
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatListModule
+    MatListModule,
+    MatDialogModule,
+    MatSelectModule
   ]
 })
 export class OrdersModule {

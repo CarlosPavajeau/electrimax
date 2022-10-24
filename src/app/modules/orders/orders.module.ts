@@ -11,13 +11,16 @@ import { MatButtonModule } from '@angular/material/button'
 import { MatListModule } from '@angular/material/list';
 import { AddOrderItemModalComponent } from './components/add-order-item-modal/add-order-item-modal.component'
 import { MatDialogModule } from '@angular/material/dialog'
-import { MatSelectModule } from '@angular/material/select'
+import { MatSelectModule } from '@angular/material/select';
+import { OrdersComponent } from './components/orders/orders.component'
+import { MatTableModule } from '@angular/material/table'
 
 
 @NgModule({
   declarations: [
     RegisterOrderComponent,
-    AddOrderItemModalComponent
+    AddOrderItemModalComponent,
+    OrdersComponent
   ],
   imports: [
     CommonModule,
@@ -29,7 +32,8 @@ import { MatSelectModule } from '@angular/material/select'
     MatButtonModule,
     MatListModule,
     MatDialogModule,
-    MatSelectModule
+    MatSelectModule,
+    MatTableModule
   ]
 })
 export class OrdersModule {

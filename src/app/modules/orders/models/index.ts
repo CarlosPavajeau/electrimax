@@ -21,13 +21,13 @@ export type Order = {
 
   createdAt: Date
 
-  subtotal: number
+  subTotal: number
   total: number
   discount: number
 
   items: OrderItem[]
 }
 
-export type OrderCreate = Omit<Order, 'id' | 'createdAt' | 'items' | 'subtotal' | 'total' | 'discount'> & {
+export type OrderCreate = Omit<Order, 'id' | 'createdAt' | 'items' | 'subTotal' | 'total' | 'discount'> & {
   items: OrderItemCreate[]
 }

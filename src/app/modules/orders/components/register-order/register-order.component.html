@@ -1,0 +1,30 @@
+<ng-container>
+  <form class="form" [formGroup]="form" (ngSubmit)="register()">
+    <mat-form-field>
+      <mat-label>Identificación del cliente</mat-label>
+      <input matInput formControlName="customerId">
+
+      <mat-error *ngIf="form.get('customerId')?.hasError('required')">
+        Identificación es requerida
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Dirección del cliente</mat-label>
+      <input matInput formControlName="customerAddress">
+
+      <mat-error *ngIf="form.get('customerAddress')?.hasError('required')">
+        Dirección es requerida
+      </mat-error>
+    </mat-form-field>
+
+    <h2 class="mat-h2">Productos</h2>
+    <mat-list>
+      <mat-list-item *ngFor="let item of form.get('items')?.value">
+        {{item.quantity}} x {{item.product.name}} - {{item.price | currency}}
+      </mat-list-item>
+    </mat-list>
+
+    <button mat-raised-button color="primary" type="submit">Registrar</button>
+  </form>
+</ng-container>

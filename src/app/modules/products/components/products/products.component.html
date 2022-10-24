@@ -1,0 +1,39 @@
+<table mat-table [dataSource]="products" class="mat-elevation-z8" width="100%">
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef>Id</th>
+    <td mat-cell *matCellDef="let product"> {{product.id}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef>Nombre</th>
+    <td mat-cell *matCellDef="let product"> {{product.name}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="color">
+    <th mat-header-cell *matHeaderCellDef>Color</th>
+    <td mat-cell *matCellDef="let product"> {{product.color}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="quantity">
+    <th mat-header-cell *matHeaderCellDef>Cantidad</th>
+    <td mat-cell *matCellDef="let product"> {{product.quantity}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="price">
+    <th mat-header-cell *matHeaderCellDef>Precio</th>
+    <td mat-cell *matCellDef="let product"> {{product.price}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="salesDepartment">
+    <th mat-header-cell *matHeaderCellDef>Departamento de ventas</th>
+    <td mat-cell *matCellDef="let product"> {{product.salesDepartment.name}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="createdAt">
+    <th mat-header-cell *matHeaderCellDef>Fecha de creación</th>
+    <td mat-cell *matCellDef="let product"> {{product.createdAt | date}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
